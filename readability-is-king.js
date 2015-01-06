@@ -15,6 +15,11 @@
   Example:
   The turtle is leaving.
   (0.39 * 4) + (11.8 * 1.5) - 15.59 = 3.67
+
+
+  Vowels: A, E, I, O, U, and sometimes Y
+  Syllables: http://www.howmanysyllables.com/whataresyllables
+  Ignore: -, _, ', ", {}, [], (), <>, mr.|dr.|ms.|...
  */
 
 function fleschKincaid(text){
