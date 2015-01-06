@@ -23,5 +23,26 @@
  */
 
 function fleschKincaid(text){
-  //...
+  var words = text.split(' ');
+
+  var wordCount = words.length;
+  var syllableCount = 0;
+  var sentenceCount = 0;
+
+  var syllableReg = /([aeiou])(?![aeiou])/ig;
+  var sentenceReg = /([\.\!\?]){1}$/i;
+
+  for(var i = 0; i < wordCount; i++) {
+    var word = words[i];
+
+    syllableCount += (word.match(syllableReg) || []).length;
+
+    var sentenceRegResults = word.match(sentenceReg) || [];
+
+    if(sentenceRegResults.length)
+      sentenceCount++;
+
+  }
+
+  return 0.39 * (wordCount / sentenceCount) + 11.8 * (syllableCount / wordCount) - 15.59;
 }
